@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GroceryEmart.Entities

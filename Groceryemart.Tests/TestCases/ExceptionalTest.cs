@@ -227,7 +227,6 @@ namespace GroceryEmart.Tests.TestCases
             }
             catch (Exception)
             {
-              //Asert
               status = Convert.ToString(res);
               _output.WriteLine(testName + ":Failed");
               await CallAPI.saveTestResult(testName, status, type);

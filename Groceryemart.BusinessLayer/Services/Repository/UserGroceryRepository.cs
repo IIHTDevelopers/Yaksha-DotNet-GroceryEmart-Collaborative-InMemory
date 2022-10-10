@@ -28,14 +28,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<ApplicationUser> GetUserById(int UserId)
         {
-            try
-            {
-                return await _groceryemartDbContext.users.FirstOrDefaultAsync(m => m.UserId == UserId);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Verify User using this method if its is registred or not
@@ -45,15 +39,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<ApplicationUser> Login(string Email, string password)
         {
-            try
-            {
-                var user = await _groceryemartDbContext.users.FirstOrDefaultAsync(m => m.Email == Email && m.Password == password);
-                return user;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Logout function
@@ -61,6 +48,7 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public Task<bool> Logout()
         {
+            //do code here
             throw new NotImplementedException();
         }
         /// <summary>
@@ -70,20 +58,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<ApplicationUser> Register(ApplicationUser user)
         {
-            try
-            {
-                if (user == null)
-                {
-                    throw new ArgumentNullException(typeof(ApplicationUser).Name + "Object is Null");
-                }
-                await _groceryemartDbContext.users.AddAsync(user);
-                await _groceryemartDbContext.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            return user;
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Update Registred user in ApplicationUser table
@@ -93,27 +69,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<ApplicationUser> UpdateUser(int UserId, ApplicationUser user)
         {
-            if (user == null && UserId <= 0)
-            {
-                throw new ArgumentNullException(typeof(ApplicationUser).Name + "Object or may be UserId is Null");
-            }
-
-            var existingUser = await _groceryemartDbContext.users.Where(x => x.UserId == UserId).FirstOrDefaultAsync();
-            if(existingUser != null)
-            {
-                existingUser.Name = user.Name;
-                existingUser.Email = user.Email;
-                existingUser.Password = user.Password;
-                existingUser.MobileNumber = user.MobileNumber;
-                existingUser.PinCode = user.PinCode;
-                existingUser.HouseNo_Building_Name = user.HouseNo_Building_Name;
-                existingUser.Road_area = user.Road_area;
-                existingUser.City = user.City;
-                existingUser.State = user.State;
-
-                await _groceryemartDbContext.SaveChangesAsync();
-            }
-            return existingUser;
+            //do code here
+            throw new NotImplementedException();
         }
     }
 }

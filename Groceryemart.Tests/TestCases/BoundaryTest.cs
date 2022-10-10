@@ -108,9 +108,10 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-            await CallAPI.saveTestResult(testName, status, type);
-            return res;
+          await CallAPI.saveTestResult(testName, status, type);
+          return res;
         }
+
 
         /// <summary>
         /// Testfor_ValidateUserName is used to test register user is valid or not
@@ -179,11 +180,11 @@ namespace GroceryEmart.Tests.TestCases
             }
             catch (Exception)
             {
-              //Asert
-              status = Convert.ToString(res);
-              _output.WriteLine(testName + ":Failed");
-              await CallAPI.saveTestResult(testName, status, type);
-              return false;
+                //Asert
+                status = Convert.ToString(res);
+                _output.WriteLine(testName + ":Failed");
+                await CallAPI.saveTestResult(testName, status, type);
+                return false;
             }
             //Asert
             status = Convert.ToString(res);
@@ -195,8 +196,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-            await CallAPI.saveTestResult(testName, status, type);
-            return res;
+          await CallAPI.saveTestResult(testName, status, type);
+          return res;
         }
 
 
@@ -327,8 +328,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-            await CallAPI.saveTestResult(testName, status, type);
-            return res;
+          await CallAPI.saveTestResult(testName, status, type);
+          return res;
         }
 
 
@@ -415,8 +416,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-          await CallAPI.saveTestResult(testName, status, type);
-          return res;
+            await CallAPI.saveTestResult(testName, status, type);
+            return res;
         }
 
 
@@ -723,8 +724,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-            await CallAPI.saveTestResult(testName, status, type);
-            return res;
+          await CallAPI.saveTestResult(testName, status, type);
+          return res;
         }
 
 

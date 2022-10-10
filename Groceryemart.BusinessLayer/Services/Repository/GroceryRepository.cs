@@ -1,8 +1,6 @@
 ﻿using GroceryEmart.DataLayer;
 using GroceryEmart.Entities;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Bson;
-using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,16 +24,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<IEnumerable<Product>> GetAllProduct()
         {
-            try
-            {
-                var result = await _groceryemartDbContext.products.
-                OrderByDescending(x => x.ProductId).Take(10).ToListAsync();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Get Product from Product table by Product Id
@@ -44,14 +34,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<Product> GetProductById(int ProductId)
         {
-            try
-            {
-                return await _groceryemartDbContext.products.FirstOrDefaultAsync(m => m.ProductId == ProductId);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Get List of Category from Category table
@@ -59,15 +43,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public IList<Category> CategoryList()
         {
-            try
-            {
-                var list = _groceryemartDbContext.categories.ToList();
-                return list;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Place Order and verify registred user
@@ -77,34 +54,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<bool> PlaceOrder(int ProductId, int UserId)
         {
-            try
-            {
-                var res = false;
-                if(ProductId > 0 && UserId > 0)
-                {
-                    var findProduct = _groceryemartDbContext.products.FirstOrDefault(p => p.ProductId == ProductId);
-                    if (findProduct != null)
-                    {
-                        var order = new ProductOrder()
-                        {
-                            ProductId = findProduct.ProductId,
-                            UserId = UserId
-                        };
-                        await _groceryemartDbContext.AddAsync(order);
-                        await _groceryemartDbContext.SaveChangesAsync();
-                    }
-                    res = true;
-                }
-                else
-                {
-                    return false;
-                }
-                return res;
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Get product by name from Product table
@@ -113,15 +64,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<IEnumerable<Product>> ProductByName(string ProductName)
         {
-            try
-            {
-                return await _groceryemartDbContext.products.Where(x => x.ProductName == ProductName)
-                    .Take(10).ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Get product by categoryId from Product table
@@ -130,14 +74,8 @@ namespace GroceryEmart.BusinessLayer.Services.Repository
         /// <returns></returns>
         public async Task<IEnumerable<Product>> GetProductByCategory(int CatId)
         {
-            try
-            {
-                return await _groceryemartDbContext.products.Where(x => x.CatId == CatId).Take(10).ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+            //do code here
+            throw new NotImplementedException();
         }
     }
 }

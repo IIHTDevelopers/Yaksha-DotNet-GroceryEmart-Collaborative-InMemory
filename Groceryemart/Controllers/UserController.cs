@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GroceryEmart.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
