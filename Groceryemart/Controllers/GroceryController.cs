@@ -31,6 +31,7 @@ namespace GroceryEmart.Controllers
         /// <returns></returns>
         // GET: api/<GroceryController>
         [HttpGet]
+        [Route("All-Products")]
         public async Task<IEnumerable<Product>> AllProduct()
         {
             //do code here

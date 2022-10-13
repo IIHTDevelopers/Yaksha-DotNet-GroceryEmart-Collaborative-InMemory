@@ -24,16 +24,15 @@ namespace GroceryEmart
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-            });
             services.AddMvc(options => options.EnableEndpointRouting = false).
                 SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             // use inmemory db
             services.AddDbContext<GroceryemartDbContext>(options => options.UseInMemoryDatabase(databaseName: "InmemeoryAppConn"));
             
+            //use sql server
+            //services.AddDbContext<GroceryemartDbContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();
 
@@ -43,14 +42,7 @@ namespace GroceryEmart
             services.AddScoped<IUserGroceryServices, UserGroceryServices>();
             services.AddScoped<IAdminGroceryRepository, AdminGroceryRepository>();
             services.AddScoped<IAdminGroceryServices, AdminGroceryServices>();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

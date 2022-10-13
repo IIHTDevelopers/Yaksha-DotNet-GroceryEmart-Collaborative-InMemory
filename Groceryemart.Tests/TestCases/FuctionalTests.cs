@@ -161,7 +161,6 @@ namespace GroceryEmart.Tests.TestCases
             return res;
         }
 
-
         /// <summary>
         /// Test to validate user update is valid or not
         /// </summary>
@@ -198,7 +197,6 @@ namespace GroceryEmart.Tests.TestCases
             }
             catch (Exception)
             {
-              //Asert
               status = Convert.ToString(res);
               _output.WriteLine(testName + ":Failed");
               await CallAPI.saveTestResult(testName, status, type);
@@ -214,8 +212,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-          await CallAPI.saveTestResult(testName, status, type);
-          return res;
+            await CallAPI.saveTestResult(testName, status, type);
+            return res;
         }
 
 
@@ -250,6 +248,7 @@ namespace GroceryEmart.Tests.TestCases
               return false;
             }
             //Asert
+            //final result displaying in text file
             status = Convert.ToString(res);
             if (res == true)
             {
@@ -259,8 +258,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-          await CallAPI.saveTestResult(testName, status, type);
-          return res;
+            await CallAPI.saveTestResult(testName, status, type);
+            return res;
         }
 
 
@@ -567,8 +566,8 @@ namespace GroceryEmart.Tests.TestCases
             {
                 _output.WriteLine(testName + ":Failed");
             }
-          await CallAPI.saveTestResult(testName, status, type);
-          return res;
+            await CallAPI.saveTestResult(testName, status, type);
+            return res;
         }
 
 
@@ -656,11 +655,11 @@ namespace GroceryEmart.Tests.TestCases
             }
             catch (Exception)
             {
-            //Asert
-            status = Convert.ToString(res);
-            _output.WriteLine(testName + ":Failed");
-            await CallAPI.saveTestResult(testName, status, type);
-            return false;
+              //Asert
+              status = Convert.ToString(res);
+              _output.WriteLine(testName + ":Failed");
+              await CallAPI.saveTestResult(testName, status, type);
+              return false;
             }
             ///Asert
             status = Convert.ToString(res);

@@ -31,6 +31,7 @@ namespace GroceryEmart.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Route("All-Users")]
         public async Task<IEnumerable<ApplicationUser>> AllUser()
         {
             //do code here
